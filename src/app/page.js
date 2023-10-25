@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import List from "@/components/List"
 import Item from "@/components/item"
 import TodoForm from "@/components/TodoForm"
+import "tw-elements-react/dist/css/tw-elements-react.min.css";
 
 const SAVED_ITEMS = 'savedItems'
 
