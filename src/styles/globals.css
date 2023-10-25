@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --rgba-color: 0, 0, 0, 50;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,11 +25,11 @@ body {
 }
 
 .btn {
-  @apply text-base font-medium rounded-lg p-3 cursor-pointer w-min;
+  @apply cursor-pointer;
 }
 
 .btn-primary {
-  @apply bg-sky-600 text-white hover:bg-sky-700;
+  @apply bg-sky-600 text-white sm:hover:bg-sky-700 active:bg-sky-400;
 }
 
 .btn-danger {
@@ -49,4 +50,13 @@ body {
 
 .card {
   @apply shadow-md shadow-gray-600 rounded
+}
+
+.modal {
+  @apply fixed top-0 left-0 w-screen h-screen flex justify-center items-center;
+  background-color: rgba(128, 128, 128, 0.2);
+}
+
+.cardModal {
+  @apply p-8 bg-black
 }

@@ -3,11 +3,14 @@ import { useEffect, useState } from "react"
 import List from "@/components/List"
 import Item from "@/components/item"
 import TodoForm from "@/components/TodoForm"
-import "tw-elements-react/dist/css/tw-elements-react.min.css";
+import { Plus } from "@phosphor-icons/react"
+import Modal from "@/components/Modal"
 
 const SAVED_ITEMS = 'savedItems'
 
 export default function Home() {
+
+  const [showModal, setShowModal] = useState(false)
   const [items, setItems] = useState([])
 
   useEffect(() => {
@@ -24,6 +27,7 @@ export default function Home() {
   function onAddItem(text) {
     let it = new Item(text)
     setItems([...items, it])
+    onHideModal()
   }
 
   function onItemDeleted(item) {
@@ -40,10 +44,20 @@ export default function Home() {
     setItems(updatedItems)
   }
 
+  function onHideModal() {
+    setShowModal(false)
+  }
+
   return (
-    <main className='container'>
-      <h1 className='text-3xl font-bold text-sky-400'>Todo List</h1>
-      <TodoForm onAddItem={onAddItem} />
+    <main className='container mt-4'>
+      <header className="flex justify-between items-center">
+        <h1 className='text-3xl font-bold text-sky-400'>Todo List</h1>
+        <button onClick={() => { setShowModal(true) }}
+          className="btn btn-primary rounded-full w-10 h-10 flex justify-center items-center">
+          <Plus size={26} />
+        </button>
+      </header>
+      <Modal show={showModal} onHideModal={onHideModal}><TodoForm onAddItem={onAddItem}></TodoForm></Modal>
       <List onDone={onDone} onItemDeleted={onItemDeleted} items={items} />
     </main>
   )

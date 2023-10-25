@@ -18,9 +18,9 @@ export default function TodoForm(props) {
   }
 
   return (
-    <form className="flex justify-center items-center gap-4 mt-4 w-full" action="">
-      <input onChange={handleChange} value={text} className="rounded bg-gray-800 p-2" type="text" />
-      <button onClick={addItem} className='btn btn-primary'><Plus size={18} /></button>
+    <form className="flex justify-between items-center gap-4 w-full" >
+      <input onChange={handleChange} value={text} className="rounded w-11/12 bg-gray-800 p-2" type="text" />
+      <button onClick={addItem} className='flex justify-center items-center btn btn-primary rounded-full w-9 h-9'><Plus size={18} /></button>
     </form>
   )
 }
