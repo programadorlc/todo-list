@@ -49,14 +49,16 @@ body {
 }
 
 .card {
-  @apply shadow-md shadow-gray-600 rounded
+  @apply shadow shadow-gray-600 rounded
 }
 
 .modal {
   @apply fixed top-0 left-0 w-screen h-screen flex justify-center items-center;
   background-color: rgba(128, 128, 128, 0.2);
+  overflow: hidden;
 }
 
 .cardModal {
-  @apply p-8 bg-black
+  @apply p-4 pt-2 bg-black;
+  overflow: hidden;
 }

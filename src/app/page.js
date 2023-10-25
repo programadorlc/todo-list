@@ -57,6 +57,7 @@ export default function Home() {
           <Plus size={26} />
         </button>
       </header>
+
       <Modal show={showModal} onHideModal={onHideModal}><TodoForm onAddItem={onAddItem}></TodoForm></Modal>
       <List onDone={onDone} onItemDeleted={onItemDeleted} items={items} />
     </main>
