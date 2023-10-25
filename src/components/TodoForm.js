@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { Plus } from "@phosphor-icons/react"
-import { TERipple } from "tw-elements-react"
 
 export default function TodoForm(props) {
   const [text, setText] = useState('')
@@ -21,9 +20,7 @@ export default function TodoForm(props) {
   return (
     <form className="flex justify-center items-center gap-4 mt-4 w-full" action="">
       <input onChange={handleChange} value={text} className="rounded bg-gray-800 p-2" type="text" />
-      <TERipple>
-        <button onClick={addItem} className='btn btn-primary'><Plus size={18} /></button>
-      </TERipple>
+      <button onClick={addItem} className='btn btn-primary'><Plus size={18} /></button>
     </form>
   )
 }
