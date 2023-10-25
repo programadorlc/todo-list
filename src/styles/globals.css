@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.btn {
+  @apply text-base font-medium rounded-lg p-3 cursor-pointer w-min;
+}
+
+.btn-primary {
+  @apply bg-sky-600 text-white hover:bg-sky-700;
+}
+
+.btn-danger {
+  @apply bg-red-600 text-white hover:bg-red-700;
+}
+
+.btn-success {
+  @apply bg-green-600 text-white hover:bg-green-700;
+}
+
+.done {
+  @apply line-through;
+}
+
+.item {
+  @apply flex justify-between items-center text-2xl p-4 mt-6 bg-gray-800
+}
+
+.card {
+  @apply shadow-md shadow-gray-600 rounded
+}
